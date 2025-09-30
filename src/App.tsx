@@ -6,7 +6,7 @@ import TodoTask from './Components/TodoTask'
 const App: FC = () => {
 
   const [ task, setTask ] = useState<string>("")
-  const [ deadline, setDeadline ] = useState<number>()
+  const [ deadline, setDeadline ] = useState<number>(0)
   const [ todoList, setTodoList ] = useState<ITask[]>([])
 
 
