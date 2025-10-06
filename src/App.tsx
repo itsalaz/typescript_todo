@@ -23,6 +23,11 @@ const addTask = (): void => {
   setDeadline(0)
 }
 
+const deleteTask = (taskNameToDelete: string): void => {
+  setTodoList(todoList.filter((task) => {
+    return task.taskName !== taskNameToDelete
+  }))
+}
 
   return (
   <div className="App">
@@ -40,7 +45,7 @@ const addTask = (): void => {
       <button onClick={addTask}>Add Task</button>
       <div className='todoList'>
         {todoList.map((task: ITask, key: number) => {
-          return <TodoTask key={key} task={task} />
+          return <TodoTask key={key} task={task} deleteTask={deleteTask}/>
         })}
 
       </div>
